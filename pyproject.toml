@@ -1,0 +1,79 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "graph-dependence"
+version = "0.1.0"
+description = "Minimal diagnostics that separate graph dependence from graph advantage."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [
+  { name = "Prahas Duggireddy", email = "prahasduggireddy@thirdwheel.ai" },
+]
+keywords = [
+  "graph learning",
+  "graph ablation",
+  "link prediction",
+  "null model",
+  "evaluation",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = ["networkx>=3.2,<4"]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.17",
+  "pytest>=8.4",
+  "pytest-cov>=6.2",
+  "ruff>=0.12",
+  "types-networkx>=3.2",
+]
+release = [
+  "build>=1.2",
+  "twine>=6.1",
+]
+
+[project.urls]
+Paper = "https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
+Repository = "https://github.com/Third-Wheel/dependence-is-not-advantage"
+Issues = "https://github.com/Third-Wheel/dependence-is-not-advantage/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/graph_dependence"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["graph_dependence"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests", "examples"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "N", "RUF", "UP"]

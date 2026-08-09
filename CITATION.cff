@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: >-
+  If you use this implementation, please cite the paper below and identify the
+  software version used.
+type: software
+title: "Graph Dependence: diagnostics for graph ablations"
+abstract: >-
+  A small Python implementation of diagnostics that separate dependence on an
+  observed graph arrangement from advantage over a named graph-free comparator.
+authors:
+  - family-names: Duggireddy
+    given-names: Prahas
+    affiliation: Third Wheel
+version: 0.1.0
+license: Apache-2.0
+repository-code: "https://github.com/Third-Wheel/dependence-is-not-advantage"
+url: "https://github.com/Third-Wheel/dependence-is-not-advantage"
+keywords:
+  - graph learning
+  - graph ablation
+  - link prediction
+  - graph null model
+preferred-citation:
+  type: article
+  title: "Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure"
+  authors:
+    - family-names: Duggireddy
+      given-names: Prahas
+      affiliation: Third Wheel
+  year: 2026
+  url: "https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
