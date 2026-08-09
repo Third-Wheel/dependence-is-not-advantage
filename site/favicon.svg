@@ -1,6 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Two graph comparisons">
-  <rect width="64" height="64" rx="12" fill="#fbfcf9"/>
-  <path d="M10 20h44M10 44h44" stroke="#1e2421" stroke-width="5"/>
-  <circle cx="19" cy="20" r="6" fill="#b65d34"/>
-  <circle cx="45" cy="44" r="6" fill="#287277"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Two graph structures">
+  <title>Two graph structures</title>
+  <rect width="64" height="64" rx="14" fill="#14231f"/>
+
+  <!-- Two arrangements of the same three-node system. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+    <path d="M12 18 24 46 29 25 12 18M24 46 29 25" stroke="#82c8b0"/>
+    <path d="M37 18 51 25 42 46 37 18M37 18 42 46" stroke="#e6a27b"/>
+  </g>
+
+  <g fill="#f5f1df" stroke="#14231f" stroke-width="2">
+    <circle cx="12" cy="18" r="5"/>
+    <circle cx="24" cy="46" r="5"/>
+    <circle cx="29" cy="25" r="5"/>
+    <circle cx="37" cy="18" r="5"/>
+    <circle cx="51" cy="25" r="5"/>
+    <circle cx="42" cy="46" r="5"/>
+  </g>
+
+  <path d="M32 11v42" stroke="#527267" stroke-width="2" stroke-dasharray="2 4"/>
 </svg>
