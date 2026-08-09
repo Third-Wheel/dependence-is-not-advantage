@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure, by Prahas Duggireddy.">
+    <meta name="citation_title" content="Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure">
+    <meta name="citation_author" content="Prahas Duggireddy">
+    <meta name="citation_publication_date" content="2026">
+    <meta name="citation_pdf_url" content="https://third-wheel.github.io/dependence-is-not-advantage/dependence-is-not-advantage.pdf">
+    <meta name="citation_fulltext_html_url" content="https://third-wheel.github.io/dependence-is-not-advantage/">
+    <meta name="theme-color" content="#f5f7f3">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure">
+    <meta property="og:description" content="A paper about what graph randomization does—and does not—measure.">
+    <meta property="og:url" content="https://third-wheel.github.io/dependence-is-not-advantage/">
+    <link rel="canonical" href="https://third-wheel.github.io/dependence-is-not-advantage/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure — Third Wheel</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure",
+        "author": {
+          "@type": "Person",
+          "name": "Prahas Duggireddy",
+          "url": "https://www.linkedin.com/in/prahas-duggireddy/",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Third Wheel",
+            "url": "https://thirdwheel.ai/"
+          }
+        },
+        "datePublished": "2026",
+        "url": "https://third-wheel.github.io/dependence-is-not-advantage/",
+        "mainEntityOfPage": "https://third-wheel.github.io/dependence-is-not-advantage/",
+        "sameAs": [
+          "https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
+        ],
+        "abstract": "Graph ablation studies often interpret a performance drop after edge randomization as evidence that graph structure improves prediction. These are different comparisons: randomization measures how a fixed procedure depends on the observed edge arrangement, whereas improvement requires comparison with a specified graph-free baseline. Let D = W(f, G) − W(f, N₁) denote dependence on the edge arrangement and A = A(f; c) advantage over a comparator with the same node content and no graph. With survival ratio s = W(f, N₁) / W(f, G), the relative drop is 1 − s. For an enumerated scorer class, we derive the tightest monotone upper envelope of advantage as a function of this drop and characterize the penalty created by inverted scorer orderings. For scorers whose positive scores require a common neighbor, we also bound null performance using the surviving common-neighbor mass. On ogbl-collab, the 12 arrangement-reading scorers lose between 89.52% and 99.90% of their intact Hits@50 under the degree-preserving null, while their advantages range from −0.3147 to 0.2208. The modularity-matrix spectral scorer loses 91.70% yet has advantage −0.0531 against the content-only comparator; GraphSAGE loses 34.25% and has advantage 0.1423 (95% CI [0.1309, 0.1537]). The same contrasts disagree across five additional public benchmarks. Finally, we treat a graph null model as a distribution over a constrained graph space and show why the support of its sampling algorithm must be checked separately. The results motivate reporting the intact score, graph-free baseline, survival ratio, and sampler diagnostics together. They concern evaluation validity, not downstream recommendation benefit.",
+        "encoding": {
+          "@type": "MediaObject",
+          "contentUrl": "https://third-wheel.github.io/dependence-is-not-advantage/dependence-is-not-advantage.pdf",
+          "encodingFormat": "application/pdf"
+        }
+      }
+    </script>
+    <script src="site.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header shell">
+      <a class="wordmark" href="https://thirdwheel.ai/" target="_blank" rel="noopener noreferrer">Third Wheel</a>
+      <nav class="site-nav" aria-label="Paper links">
+        <a href="dependence-is-not-advantage.pdf">PDF</a>
+        <a href="https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage" aria-label="Read the preprint on AlphaXiv">Preprint</a>
+        <a class="github-link" href="https://github.com/Third-Wheel/dependence-is-not-advantage" target="_blank" rel="noopener noreferrer" aria-label="Open the code repository on GitHub">
+          <svg class="github-icon" aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+          <span>Code</span>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span data-theme-label>Dark</span>
+        </button>
+        <span class="visually-hidden" id="theme-status" role="status" aria-live="polite"></span>
+      </nav>
+    </header>
+
+    <main id="main-content" class="shell paper-main" aria-labelledby="paper-title">
+      <article>
+        <header class="paper-header">
+          <p class="eyebrow">Preprint · 2026</p>
+          <h1 id="paper-title">Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure</h1>
+          <p class="byline"><a href="https://www.linkedin.com/in/prahas-duggireddy/" target="_blank" rel="noopener noreferrer">Prahas Duggireddy</a> · <a href="https://thirdwheel.ai/" target="_blank" rel="noopener noreferrer">Third Wheel</a> · Irvine, USA</p>
+          <p class="contact"><a href="mailto:prahasduggireddy@thirdwheel.ai">prahasduggireddy@thirdwheel.ai</a></p>
+          <p class="paper-links" aria-label="Paper links">
+            <a class="primary-link" href="dependence-is-not-advantage.pdf">Download the PDF</a>
+            <a href="https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage" aria-label="Read the preprint on AlphaXiv">Read the preprint</a>
+            <a href="https://github.com/Third-Wheel/dependence-is-not-advantage" target="_blank" rel="noopener noreferrer">View the code</a>
+          </p>
+        </header>
+
+        <section class="abstract" aria-labelledby="abstract-heading">
+          <h2 id="abstract-heading">Abstract</h2>
+          <div class="abstract-copy">
+            <p>
+              Graph ablation studies often interpret a performance drop after edge
+              randomization as evidence that graph structure improves prediction.
+              These are different comparisons: randomization measures how a fixed
+              procedure depends on the observed edge arrangement, whereas improvement
+              requires comparison with a specified graph-free baseline. Let
+              <span class="formula">D = W(f, G) − W(f, N₁)</span> denote dependence on
+              the edge arrangement and <span class="formula">A = A(f; c)</span> advantage
+              over a comparator with the same node content and no graph. With survival
+              ratio <span class="formula">s = W(f, N₁) / W(f, G)</span>, the relative
+              drop is <span class="formula">1 − s</span>.
+            </p>
+            <p>
+              For an enumerated scorer class, we derive the tightest monotone upper
+              envelope of advantage as a function of this drop and characterize the
+              penalty created by inverted scorer orderings. For scorers whose positive
+              scores require a common neighbor, we also bound null performance using
+              the surviving common-neighbor mass. On ogbl-collab, the 12
+              arrangement-reading scorers lose between 89.52% and 99.90% of their
+              intact Hits@50 under the degree-preserving null, while their advantages
+              range from −0.3147 to 0.2208. The modularity-matrix spectral scorer
+              loses 91.70% yet has advantage −0.0531 against the content-only
+              comparator; GraphSAGE loses 34.25% and has advantage 0.1423 (95% CI
+              [0.1309, 0.1537]). The same contrasts disagree across five additional
+              public benchmarks.
+            </p>
+            <p>
+              Finally, we treat a graph null model as a distribution over a constrained
+              graph space and show why the support of its sampling algorithm must be
+              checked separately. The results motivate reporting the intact score,
+              graph-free baseline, survival ratio, and sampler diagnostics together.
+              They concern evaluation validity, not downstream recommendation benefit.
+            </p>
+          </div>
+        </section>
+
+        <section class="distinction" aria-labelledby="distinction-heading">
+          <div class="section-intro">
+            <p class="eyebrow">The central distinction</p>
+            <h2 id="distinction-heading">Two contrasts, two questions.</h2>
+            <p>Randomizing a graph and removing a graph are not interchangeable interventions. The paper keeps their estimands separate.</p>
+          </div>
+          <div class="contrast-grid">
+            <article class="contrast-card">
+              <div class="contrast-card-heading">
+                <span class="contrast-index" aria-hidden="true">01</span>
+                <h3>Dependence</h3>
+              </div>
+              <p class="formula-block formula">D = W(f, G) − W(f, N₁)</p>
+              <p>How much a fixed graph procedure changes when the observed edge arrangement is replaced by a degree-preserving null.</p>
+              <p class="contrast-note">Observed graph ↔ degree-preserving null</p>
+            </article>
+            <article class="contrast-card contrast-card-accent">
+              <div class="contrast-card-heading">
+                <span class="contrast-index" aria-hidden="true">02</span>
+                <h3>Advantage</h3>
+              </div>
+              <p class="formula-block formula">A = A(f; c)</p>
+              <p>How the graph procedure compares with a specified content-only comparator under the same evaluation target.</p>
+              <p class="contrast-note">Graph procedure ↔ content-only comparator</p>
+            </article>
+          </div>
+        </section>
+
+        <figure class="paper-figure">
+          <div class="figure-frame">
+            <img
+              src="figure-1.png"
+              width="1000"
+              height="340"
+              alt="Diagram showing dependence as the contrast between a graph procedure on the intact graph and a degree-preserving null, and advantage as the contrast with a content-only comparator."
+            >
+          </div>
+          <figcaption>
+            <strong>Figure 1.</strong> The two contrasts and the arm each is taken against.
+            The same graph procedure <span class="formula">f</span> is evaluated on
+            <span class="formula">G</span> and under the degree-preserving law
+            <span class="formula">N₁</span>; condition-specific fitting and selection
+            remain part of that fixed procedure definition. The no-graph condition is
+            occupied by a distinct comparator <span class="formula">c</span>. Both
+            braces share <span class="formula">W(f, G)</span>, but dependence subtracts
+            <span class="formula">W(f, N₁)</span> and advantage subtracts
+            <span class="formula">W(c, ∅)</span>. Measured values for both contrasts
+            are in Table 1 and Appendix I.
+          </figcaption>
+        </figure>
+
+        <section class="citation" aria-labelledby="citation-heading">
+          <h2 id="citation-heading">Citation</h2>
+          <p class="citation-text">
+            Duggireddy, Prahas. “Dependence Is Not Advantage: What Randomizing the
+            Graph Does Not Measure.” Preprint, 2026.
+          </p>
+          <p class="citation-note">Copy the entry below or download it as a <code>.bib</code> file.</p>
+          <pre class="bibtex-block"><code id="bibtex-content">@misc{duggireddy2026dependence,
+  author = {Duggireddy, Prahas},
+  title = {Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure},
+  year = {2026},
+  note = {Preprint},
+  url = {https://third-wheel.github.io/dependence-is-not-advantage/}
+}</code></pre>
+          <div class="bibtex-tools">
+            <button class="action-link" id="copy-bibtex" type="button">Copy BibTeX</button>
+            <a class="action-link" href="citation.bib" download="dependence-is-not-advantage.bib">Download .bib</a>
+          </div>
+          <p class="code-citation">For software reuse, cite the versioned release and report the version used; see the repository’s <a href="https://github.com/Third-Wheel/dependence-is-not-advantage/blob/main/CITATION.cff" target="_blank" rel="noopener noreferrer">CITATION.cff</a>. For the method or results, cite the <a href="https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage" target="_blank" rel="noopener noreferrer">associated paper</a>.</p>
+          <p class="visually-hidden" id="copy-status" role="status" aria-live="polite"></p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer shell">
+      <span><a href="https://thirdwheel.ai/" target="_blank" rel="noopener noreferrer">Third Wheel</a> · 2026</span>
+      <a href="mailto:prahasduggireddy@thirdwheel.ai">Contact</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,582 @@
+:root {
+  color-scheme: light;
+  --background: #f5f7f3;
+  --surface: #ffffff;
+  --surface-muted: #eaf0eb;
+  --ink: #18211c;
+  --muted: #647169;
+  --rule: #d2ddd5;
+  --accent: #206653;
+  --accent-strong: #174d3f;
+  --control-border: #b5c4b9;
+  --focus: #1d6b56;
+  --max-width: 72rem;
+  --reading-width: 56rem;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #121813;
+  --surface: #1b241e;
+  --surface-muted: #202c24;
+  --ink: #eef5ef;
+  --muted: #a5b4a9;
+  --rule: #38483d;
+  --accent: #8bd0b5;
+  --accent-strong: #b6efd2;
+  --control-border: #5b6d60;
+  --focus: #c7ffe0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --background: #121813;
+    --surface: #1b241e;
+    --surface-muted: #202c24;
+    --ink: #eef5ef;
+    --muted: #a5b4a9;
+    --rule: #38483d;
+    --accent: #8bd0b5;
+    --accent-strong: #b6efd2;
+    --control-border: #5b6d60;
+    --focus: #c7ffe0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  transition: color 140ms ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 0.2rem;
+}
+
+.shell {
+  width: min(calc(100% - 3rem), var(--max-width));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 2;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--background);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 1.15rem;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 160ms ease;
+}
+
+.wordmark {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.site-nav,
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-nav {
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.site-nav a,
+.paper-links a {
+  text-decoration: none;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.github-icon {
+  flex: 0 0 auto;
+}
+
+.site-nav a:hover,
+.paper-links a:hover {
+  text-decoration: underline;
+}
+
+.theme-toggle,
+.action-link {
+  border: 1px solid var(--control-border);
+  border-radius: 0.2rem;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  padding: 0.3rem 0.55rem;
+  text-decoration: none;
+  transition: border-color 140ms ease, color 140ms ease, background-color 140ms ease;
+}
+
+.theme-toggle:hover,
+.action-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.paper-main {
+  padding-block: 6.5rem 7rem;
+}
+
+.paper-header {
+  max-width: 62rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow,
+.abstract h2,
+.citation h2 {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.paper-header h1 {
+  max-width: 60rem;
+  margin-bottom: 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.byline {
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+}
+
+.contact {
+  margin-bottom: 1.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.paper-links {
+  gap: 0.65rem 1.35rem;
+  margin-bottom: 0;
+  color: var(--accent);
+  font-size: 0.92rem;
+}
+
+.paper-links a {
+  padding-block: 0.25rem;
+}
+
+.paper-links .primary-link {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.abstract {
+  max-width: var(--reading-width);
+  padding-block: 2.75rem 0;
+}
+
+.abstract-copy {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.62;
+}
+
+.abstract-copy p {
+  margin-bottom: 1.35rem;
+}
+
+.abstract-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.distinction {
+  max-width: var(--reading-width);
+  margin-top: 4.25rem;
+  padding: 1.6rem;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.section-intro {
+  max-width: 39rem;
+}
+
+.section-intro h2 {
+  margin-bottom: 0.65rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+.section-intro > p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.contrast-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.5rem;
+  border: 1px solid var(--rule);
+  background: var(--rule);
+}
+
+.contrast-card {
+  min-height: 15rem;
+  padding: 1.4rem;
+  background: var(--surface-muted);
+  transition: background-color 180ms ease;
+}
+
+.contrast-card-accent {
+  background: var(--background);
+}
+
+.contrast-card-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.contrast-index {
+  color: var(--accent);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.contrast-card h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.formula-block {
+  margin: 1.7rem 0 0.8rem;
+  color: var(--accent-strong);
+  font-size: 1.2rem;
+}
+
+.contrast-card > p:not(.formula-block):not(.contrast-note) {
+  max-width: 28rem;
+  margin-bottom: 1.3rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.contrast-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.formula {
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.paper-figure {
+  max-width: var(--reading-width);
+  margin: 4.25rem 0 0;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.figure-frame {
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.25rem;
+  background: var(--surface);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.paper-figure img {
+  display: block;
+  width: min(100%, 52rem);
+  height: auto;
+  margin-inline: auto;
+}
+
+.paper-figure figcaption {
+  max-width: 53rem;
+  margin-top: 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.paper-figure figcaption strong {
+  font-weight: 700;
+}
+
+.citation {
+  max-width: var(--reading-width);
+  margin-top: 4.25rem;
+  padding: 2rem;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.citation-text {
+  max-width: 48rem;
+  margin-bottom: 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+}
+
+.citation-note {
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.code-citation {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.citation code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+}
+
+.bibtex-block {
+  max-width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--rule);
+  background: var(--surface-muted);
+  color: var(--ink);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.bibtex-block code {
+  font: inherit;
+}
+
+.bibtex-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.copy-fallback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 1.2rem 2.4rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+@media (max-width: 42rem) {
+  .shell {
+    width: min(calc(100% - 2rem), var(--max-width));
+  }
+
+  .site-header {
+    align-items: flex-start;
+    padding-block: 1.1rem;
+  }
+
+  .site-nav {
+    justify-content: flex-end;
+    gap: 0.35rem 0.8rem;
+  }
+
+  .paper-main {
+    padding-block: 4.5rem 5rem;
+  }
+
+  .paper-header {
+    padding-bottom: 2.25rem;
+  }
+
+  .paper-header h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+  }
+
+  .abstract-copy {
+    font-size: 1rem;
+  }
+
+  .distinction {
+    margin-top: 3.5rem;
+    padding: 1.1rem;
+  }
+
+  .contrast-grid {
+    display: block;
+    margin-top: 1.25rem;
+    border: 0;
+    background: transparent;
+  }
+
+  .contrast-card {
+    min-height: 0;
+    border: 1px solid var(--rule);
+  }
+
+  .contrast-card + .contrast-card {
+    margin-top: 0.75rem;
+  }
+
+  .bibtex-block {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .paper-figure,
+  .citation {
+    margin-top: 3.5rem;
+  }
+
+  .citation {
+    padding: 1.25rem;
+  }
+
+  .site-footer {
+    display: block;
+  }
+
+  .site-footer span,
+  .site-footer a {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body,
+  .site-header,
+  .distinction,
+  .contrast-card,
+  .figure-frame,
+  .bibtex-block,
+  .citation {
+    transition: none;
+  }
+}

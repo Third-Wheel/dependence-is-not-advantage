@@ -116,5 +116,4 @@ audit in one sitting.
 See the paper, [*Dependence Is Not Advantage: What Randomizing the Graph Does Not
 Measure*](https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage), for the
 formal definitions, empirical study, and claim boundaries. Citation guidance and
-the first-release checklist are in [`CITATION.md`](CITATION.md).
-
+the software citation metadata are in [`CITATION.cff`](CITATION.cff).
