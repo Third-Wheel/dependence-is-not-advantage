@@ -123,9 +123,13 @@
 
   applyTheme(currentTheme);
 
-  document.addEventListener("DOMContentLoaded", () => {
-    applyTheme(currentTheme);
-    initializeThemeToggle();
-    initializeCitationCopy();
-  }, { once: true });
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+      applyTheme(currentTheme);
+      initializeThemeToggle();
+      initializeCitationCopy();
+    },
+    { once: true },
+  );
 })();

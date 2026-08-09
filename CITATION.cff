@@ -11,10 +11,11 @@ authors:
   - family-names: Duggireddy
     given-names: Prahas
     affiliation: Third Wheel
+    orcid: "https://orcid.org/0009-0008-6106-0759"
 version: 0.1.0
 license: Apache-2.0
 repository-code: "https://github.com/Third-Wheel/dependence-is-not-advantage"
-url: "https://github.com/Third-Wheel/dependence-is-not-advantage"
+url: "https://third-wheel.github.io/dependence-is-not-advantage/"
 keywords:
   - graph learning
   - graph ablation
@@ -27,5 +28,6 @@ preferred-citation:
     - family-names: Duggireddy
       given-names: Prahas
       affiliation: Third Wheel
+      orcid: "https://orcid.org/0009-0008-6106-0759"
   year: 2026
   url: "https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"

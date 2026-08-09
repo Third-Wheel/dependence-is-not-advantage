@@ -47,6 +47,8 @@ release = [
 ]
 
 [project.urls]
+Homepage = "https://third-wheel.github.io/dependence-is-not-advantage/"
+Documentation = "https://github.com/Third-Wheel/dependence-is-not-advantage#readme"
 Paper = "https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
 Repository = "https://github.com/Third-Wheel/dependence-is-not-advantage"
 Issues = "https://github.com/Third-Wheel/dependence-is-not-advantage/issues"
