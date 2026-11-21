@@ -3,27 +3,29 @@ message: >-
   If you use this implementation, please cite the paper below and identify the
   software version used.
 type: software
-title: "Graph Dependence: diagnostics for graph ablations"
+title: "graph-dependence: split a graph-randomization drop into gain and penalty"
 abstract: >-
-  A small Python implementation of diagnostics that separate dependence on an
-  observed graph arrangement from advantage over a named graph-free comparator.
+  Trains a PyTorch Geometric model on the real graph, on degree-preserving
+  randomized graphs and with no edges, and reports the gain (what the graph
+  adds to the model), the penalty (what wrong edges cost it) and the drop,
+  with 95% intervals paired by seed.
 authors:
   - family-names: Duggireddy
     given-names: Prahas
     affiliation: Third Wheel
     orcid: "https://orcid.org/0009-0008-6106-0759"
-version: 0.1.0
+version: 0.2.0
 license: Apache-2.0
 repository-code: "https://github.com/Third-Wheel/dependence-is-not-advantage"
 url: "https://third-wheel.github.io/dependence-is-not-advantage/"
 keywords:
-  - graph learning
+  - graph neural networks
   - graph ablation
-  - link prediction
-  - graph null model
+  - degree-preserving randomization
+  - PyTorch Geometric
 preferred-citation:
   type: article
-  title: "Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure"
+  title: "Dependence Is Not Advantage: What a Graph-Randomization Drop Measures"
   authors:
     - family-names: Duggireddy
       given-names: Prahas

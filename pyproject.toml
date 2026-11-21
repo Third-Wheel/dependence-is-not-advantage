@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "graph-dependence"
-version = "0.1.0"
-description = "Minimal diagnostics that separate graph dependence from graph advantage."
+version = "0.2.0"
+description = "Split a graph-randomization drop into what the graph adds and what wrong edges cost."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
@@ -13,11 +13,11 @@ authors = [
   { name = "Prahas Duggireddy", email = "prahasduggireddy@thirdwheel.ai" },
 ]
 keywords = [
-  "graph learning",
+  "graph neural networks",
   "graph ablation",
-  "link prediction",
-  "null model",
-  "evaluation",
+  "degree-preserving randomization",
+  "edge shuffling",
+  "PyTorch Geometric",
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -29,17 +29,14 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
-  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
-dependencies = ["networkx>=3.2,<4"]
+dependencies = ["torch>=2.2", "torch_geometric>=2.5"]
 
 [project.optional-dependencies]
 dev = [
-  "mypy>=1.17",
   "pytest>=8.4",
-  "pytest-cov>=6.2",
   "ruff>=0.12",
-  "types-networkx>=3.2",
 ]
 release = [
   "build>=1.2",
@@ -53,6 +50,9 @@ Paper = "https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
 Repository = "https://github.com/Third-Wheel/dependence-is-not-advantage"
 Issues = "https://github.com/Third-Wheel/dependence-is-not-advantage/issues"
 
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE", "CITATION.cff", "pyproject.toml"]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/graph_dependence"]
 
@@ -60,22 +60,10 @@ packages = ["src/graph_dependence"]
 addopts = "-ra --strict-config --strict-markers"
 testpaths = ["tests"]
 
-[tool.coverage.run]
-branch = true
-source = ["graph_dependence"]
-
-[tool.coverage.report]
-show_missing = true
-skip_covered = true
-
-[tool.mypy]
-python_version = "3.12"
-strict = true
-files = ["src", "tests", "examples"]
-
 [tool.ruff]
 target-version = "py311"
-line-length = 88
+line-length = 100
 
 [tool.ruff.lint]
 select = ["B", "E", "F", "I", "N", "RUF", "UP"]
+ignore = ["N812"]  # import torch.nn.functional as F is the PyTorch convention

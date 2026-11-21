@@ -3,109 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Prahas Duggireddy" />
+    <title>Dependence Is Not Advantage: What a Graph-Randomization Drop Measures</title>
     <meta
       name="description"
-      content="Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure, by Prahas Duggireddy."
+      content="When a graph neural network's score drops after its edges are randomized, the drop is the sum of what the graph adds to the model and what wrong edges cost it. Only the first says whether the graph helps."
     />
-    <meta
-      name="keywords"
-      content="graph learning, graph ablation, link prediction, graph null models, evaluation validity"
-    />
-    <meta
-      name="citation_title"
-      content="Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure"
-    />
+    <meta name="author" content="Prahas Duggireddy" />
+    <meta name="citation_title" content="Dependence Is Not Advantage: What a Graph-Randomization Drop Measures" />
     <meta name="citation_author" content="Prahas Duggireddy" />
     <meta name="citation_publication_date" content="2026" />
     <meta
       name="citation_pdf_url"
       content="https://third-wheel.github.io/dependence-is-not-advantage/dependence-is-not-advantage.pdf"
     />
-    <meta name="theme-color" content="#f5f7f3" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#161719" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="article" />
-    <meta
-      property="og:title"
-      content="Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure"
-    />
+    <meta property="og:title" content="Dependence Is Not Advantage" />
     <meta
       property="og:description"
-      content="A paper about what graph randomization does—and does not—measure."
+      content="A drop after randomizing a graph's edges is gain plus penalty. Only the gain says whether the graph helps."
     />
-    <meta
-      property="og:url"
-      content="https://third-wheel.github.io/dependence-is-not-advantage/"
-    />
-    <meta
-      property="og:image"
-      content="https://third-wheel.github.io/dependence-is-not-advantage/figure-1.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="Diagram comparing graph dependence with graph advantage."
-    />
+    <meta property="og:url" content="https://third-wheel.github.io/dependence-is-not-advantage/" />
+    <meta property="og:image" content="https://third-wheel.github.io/dependence-is-not-advantage/figure-1.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure"
-    />
-    <meta
-      name="twitter:description"
-      content="A paper about what graph randomization does—and does not—measure."
-    />
-    <meta
-      name="twitter:image"
-      content="https://third-wheel.github.io/dependence-is-not-advantage/figure-1.png"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Diagram comparing graph dependence with graph advantage."
-    />
+    <link rel="canonical" href="https://third-wheel.github.io/dependence-is-not-advantage/" />
     <link rel="author" href="https://orcid.org/0009-0008-6106-0759" />
     <link rel="me" href="https://orcid.org/0009-0008-6106-0759" />
-    <link
-      rel="canonical"
-      href="https://third-wheel.github.io/dependence-is-not-advantage/"
-    />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <title>
-      Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure —
-      Third Wheel
-    </title>
+    <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ScholarlyArticle",
-        "headline": "Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure",
+        "headline": "Dependence Is Not Advantage: What a Graph-Randomization Drop Measures",
+        "datePublished": "2026",
         "author": {
           "@type": "Person",
           "name": "Prahas Duggireddy",
-          "url": "https://orcid.org/0009-0008-6106-0759",
-          "sameAs": [
-            "https://orcid.org/0009-0008-6106-0759",
-            "https://www.linkedin.com/in/prahas-duggireddy/"
-          ],
-          "affiliation": {
-            "@type": "Organization",
-            "name": "Third Wheel",
-            "url": "https://thirdwheel.ai/"
-          }
+          "sameAs": "https://orcid.org/0009-0008-6106-0759",
+          "affiliation": { "@type": "Organization", "name": "Third Wheel", "url": "https://thirdwheel.ai/" }
         },
-        "datePublished": "2026",
         "url": "https://third-wheel.github.io/dependence-is-not-advantage/",
-        "mainEntityOfPage": "https://third-wheel.github.io/dependence-is-not-advantage/",
-        "isAccessibleForFree": true,
-        "keywords": [
-          "graph learning",
-          "graph ablation",
-          "link prediction",
-          "graph null models",
-          "evaluation validity"
-        ],
-        "sameAs": [
-          "https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
-        ],
-        "abstract": "Graph ablation studies often interpret a performance drop after edge randomization as evidence that graph structure improves prediction. These are different comparisons: randomization measures how a fixed procedure depends on the observed edge arrangement, whereas improvement requires comparison with a specified graph-free baseline. Let D = W(f, G) − W(f, N₁) denote dependence on the edge arrangement and A = A(f; c) advantage over a comparator with the same node content and no graph. With survival ratio s = W(f, N₁) / W(f, G), the relative drop is 1 − s. For an enumerated scorer class, we derive the tightest monotone upper envelope of advantage as a function of this drop and characterize the penalty created by inverted scorer orderings. For scorers whose positive scores require a common neighbor, we also bound null performance using the surviving common-neighbor mass. On ogbl-collab, the 12 arrangement-reading scorers lose between 89.52% and 99.90% of their intact Hits@50 under the degree-preserving null, while their advantages range from −0.3147 to 0.2208. The modularity-matrix spectral scorer loses 91.70% yet has advantage −0.0531 against the content-only comparator; GraphSAGE loses 34.25% and has advantage 0.1423 (95% CI [0.1309, 0.1537]). The same contrasts disagree across five additional public benchmarks. Finally, we treat a graph null model as a distribution over a constrained graph space and show why the support of its sampling algorithm must be checked separately. The results motivate reporting the intact score, graph-free baseline, survival ratio, and sampler diagnostics together. They concern evaluation validity, not downstream recommendation benefit.",
         "encoding": {
           "@type": "MediaObject",
           "contentUrl": "https://third-wheel.github.io/dependence-is-not-advantage/dependence-is-not-advantage.pdf",
@@ -113,312 +52,188 @@
         }
       }
     </script>
-    <script src="site.js"></script>
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header shell">
-      <a class="wordmark" href="https://thirdwheel.ai/">Third Wheel</a>
-      <nav class="site-nav" aria-label="Paper links">
-        <a href="dependence-is-not-advantage.pdf">PDF</a>
-        <a
-          href="https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
-          aria-label="Read the preprint on AlphaXiv"
-          >Preprint</a
-        >
-        <a
-          class="github-link"
-          href="https://github.com/Third-Wheel/dependence-is-not-advantage"
-          aria-label="Open the code repository on GitHub"
-        >
-          <svg
-            class="github-icon"
-            aria-hidden="true"
-            viewBox="0 0 16 16"
-            width="16"
-            height="16"
-            fill="currentColor"
-          >
-            <path
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-            ></path>
-          </svg>
-          <span>Code</span>
-        </a>
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          type="button"
-          aria-label="Switch to dark mode"
-          aria-pressed="false"
-        >
-          <span data-theme-label>Dark</span>
-        </button>
-        <span
-          class="visually-hidden"
-          id="theme-status"
-          role="status"
-          aria-live="polite"
-        ></span>
+    <header class="top">
+      <a class="org" href="https://thirdwheel.ai/">Third Wheel</a>
+      <nav>
+        <a href="dependence-is-not-advantage.pdf">Paper</a>
+        <a href="https://github.com/Third-Wheel/dependence-is-not-advantage">Code</a>
+        <a href="https://pypi.org/project/graph-dependence/">PyPI</a>
       </nav>
     </header>
 
-    <main
-      id="main-content"
-      class="shell paper-main"
-      aria-labelledby="paper-title"
-    >
-      <article>
-        <header class="paper-header">
-          <p class="eyebrow">Preprint · 2026</p>
-          <h1 id="paper-title">
-            Dependence Is Not Advantage: What Randomizing the Graph Does Not
-            Measure
-          </h1>
-          <p class="byline">
-            <a href="https://orcid.org/0009-0008-6106-0759" rel="me"
-              >Prahas Duggireddy</a
-            >
-            · <a href="https://thirdwheel.ai/">Third Wheel</a> · Irvine, USA
-          </p>
-          <p class="contact">
-            <a href="mailto:prahasduggireddy@thirdwheel.ai"
-              >prahasduggireddy@thirdwheel.ai</a
-            >
-          </p>
-          <p class="paper-links" aria-label="Paper links">
-            <a class="primary-link" href="dependence-is-not-advantage.pdf"
-              >Download the PDF</a
-            >
-            <a
-              href="https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
-              aria-label="Read the preprint on AlphaXiv"
-              >Read the preprint</a
-            >
-            <a href="https://github.com/Third-Wheel/dependence-is-not-advantage"
-              >View the code</a
-            >
-          </p>
-        </header>
+    <main>
+      <section class="title">
+        <h1>Dependence Is Not Advantage</h1>
+        <p class="subtitle">What a graph-randomization drop measures</p>
+        <p class="byline">
+          <a href="https://orcid.org/0009-0008-6106-0759">Prahas Duggireddy</a> · Third Wheel · 2026
+        </p>
+        <p class="actions">
+          <a class="button" href="dependence-is-not-advantage.pdf">Read the paper (PDF)</a>
+          <a class="button quiet" href="#use">Use the package</a>
+        </p>
+      </section>
 
-        <section
-          id="abstract"
-          class="abstract"
-          aria-labelledby="abstract-heading"
-        >
-          <h2 id="abstract-heading">Abstract</h2>
-          <div class="abstract-copy">
-            <p>
-              Graph ablation studies often interpret a performance drop after
-              edge randomization as evidence that graph structure improves
-              prediction. These are different comparisons: randomization
-              measures how a fixed procedure depends on the observed edge
-              arrangement, whereas improvement requires comparison with a
-              specified graph-free baseline. Let
-              <span class="formula">D = W(f, G) − W(f, N₁)</span> denote
-              dependence on the edge arrangement and
-              <span class="formula">A = A(f; c)</span> advantage over a
-              comparator with the same node content and no graph. With survival
-              ratio <span class="formula">s = W(f, N₁) / W(f, G)</span>, the
-              relative drop is <span class="formula">1 − s</span>.
-            </p>
-            <p>
-              For an enumerated scorer class, we derive the tightest monotone
-              upper envelope of advantage as a function of this drop and
-              characterize the penalty created by inverted scorer orderings. For
-              scorers whose positive scores require a common neighbor, we also
-              bound null performance using the surviving common-neighbor mass.
-              On ogbl-collab, the 12 arrangement-reading scorers lose between
-              89.52% and 99.90% of their intact Hits@50 under the
-              degree-preserving null, while their advantages range from −0.3147
-              to 0.2208. The modularity-matrix spectral scorer loses 91.70% yet
-              has advantage −0.0531 against the content-only comparator;
-              GraphSAGE loses 34.25% and has advantage 0.1423 (95% CI [0.1309,
-              0.1537]). The same contrasts disagree across five additional
-              public benchmarks.
-            </p>
-            <p>
-              Finally, we treat a graph null model as a distribution over a
-              constrained graph space and show why the support of its sampling
-              algorithm must be checked separately. The results motivate
-              reporting the intact score, graph-free baseline, survival ratio,
-              and sampler diagnostics together. They concern evaluation
-              validity, not downstream recommendation benefit.
-            </p>
-          </div>
-        </section>
+      <section class="prose lede">
+        <p>
+          Many graphs that graph neural networks read are expensive to build: a predicted structure for
+          every protein, a curated interaction network, a knowledge graph. To show that the graph is worth
+          it, applied papers often randomize its edges, keeping every node's degree, and report how far the
+          score drops.
+        </p>
+        <p>
+          The test comes from network science, where nothing is trained on the randomized copies. In a
+          trained model the drop is the sum of two different things, and it takes one more run, the same
+          model with no edges, to tell them apart.
+        </p>
+      </section>
 
-        <section class="distinction" aria-labelledby="distinction-heading">
-          <div class="section-intro">
-            <h2 id="distinction-heading">Dependence and advantage</h2>
-            <p>
-              The same intact score is compared with two different reference
-              conditions.
-            </p>
-          </div>
-          <div class="contrast-grid">
-            <article class="contrast-card">
-              <div class="contrast-card-heading">
-                <span class="contrast-index" aria-hidden="true">01</span>
-                <h3>Dependence</h3>
-              </div>
-              <p class="formula-block formula">D = W(f, G) − W(f, N₁)</p>
-              <p>
-                How much a fixed graph procedure changes when the observed edge
-                arrangement is replaced by a degree-preserving null.
-              </p>
-              <p class="contrast-note">
-                Observed graph ↔ degree-preserving null
-              </p>
-            </article>
-            <article class="contrast-card contrast-card-accent">
-              <div class="contrast-card-heading">
-                <span class="contrast-index" aria-hidden="true">02</span>
-                <h3>Advantage</h3>
-              </div>
-              <p class="formula-block formula">A = A(f; c)</p>
-              <p>
-                How the graph procedure compares with a specified content-only
-                comparator under the same evaluation target.
-              </p>
-              <p class="contrast-note">
-                Graph procedure ↔ content-only comparator
-              </p>
-            </article>
-          </div>
-        </section>
+      <section class="identity" aria-label="The drop is gain plus penalty">
+        <div class="term drop">
+          <span class="name">drop</span>
+          <span class="def">real graph − randomized graph</span>
+          <span class="gloss">what a paper reports</span>
+        </div>
+        <span class="op">=</span>
+        <div class="term gain">
+          <span class="name">gain</span>
+          <span class="def">real graph − no edges</span>
+          <span class="gloss">what the graph adds to the model</span>
+        </div>
+        <span class="op">+</span>
+        <div class="term penalty">
+          <span class="name">penalty</span>
+          <span class="def">no edges − randomized graph</span>
+          <span class="gloss">what wrong edges cost it</span>
+        </div>
+      </section>
 
-        <figure class="paper-figure">
-          <div class="figure-frame">
-            <img
-              src="figure-1.png"
-              width="1000"
-              height="340"
-              alt="Two-column diagram: dependence compares a graph procedure on an intact graph with a degree-preserving null; advantage compares it with a content-only comparator."
-            />
-          </div>
-          <figcaption>
-            <strong>Figure 1.</strong> The two contrasts and the reference arm
-            for each. The same graph procedure <span class="formula">f</span> is
-            evaluated on <span class="formula">G</span> and under the
-            degree-preserving law <span class="formula">N₁</span>;
-            condition-specific fitting and selection remain part of that fixed
-            procedure definition. The no-graph condition is occupied by a
-            distinct comparator <span class="formula">c</span>. Both braces
-            share <span class="formula">W(f, G)</span>, but dependence subtracts
-            <span class="formula">W(f, N₁)</span> and advantage subtracts
-            <span class="formula">W(c, ∅)</span>. Measured values for both
-            contrasts are in Table 1 and Appendix I.
-          </figcaption>
-        </figure>
+      <figure class="wide">
+        <picture>
+          <source srcset="figure-1-dark.svg" media="(prefers-color-scheme: dark)" />
+          <img
+          src="figure-1.svg"
+          width="894"
+          height="403"
+          alt="Test Hits@20 of six models on CiteSeer link prediction with the real graph, a degree-preserving randomized graph and no edges. Drops run from 15% to 91%; every gain is negative."
+        />
+        </picture>
+        <figcaption>
+          <strong>Six drops, no gain.</strong> GCN, GAT and GraphSAGE trained for link prediction on
+          CiteSeer with the real graph, a degree-preserving randomized graph and no edges (means of five
+          seeds). The grey bar is the drop. Drops run from 15% to 91%, yet every model scores higher with
+          no edges than with the real graph, so the drop is all penalty. Comparing drops would rank GAT
+          far above GraphSAGE in using the graph; neither uses it.
+        </figcaption>
+      </figure>
 
-        <section class="resources" aria-labelledby="resources-heading">
-          <h2 id="resources-heading">Code and reproducibility</h2>
-          <p>
-            The accompanying code is a small Python package. Its minimal example
-            runs without network access; the paper and public-data example
-            describe their broader protocols separately.
-          </p>
-          <ul class="resource-list">
-            <li>
-              <a
-                href="https://github.com/Third-Wheel/dependence-is-not-advantage"
-                >Source package</a
-              >
-              <span
-                >Typed Python implementation, tests, and package metadata.</span
-              >
-            </li>
-            <li>
-              <a
-                href="https://github.com/Third-Wheel/dependence-is-not-advantage/blob/main/README.md"
-                >README</a
-              >
-              <span
-                >Installation, public API, paper-to-package map, and
-                scope.</span
-              >
-            </li>
-            <li>
-              <a
-                href="https://github.com/Third-Wheel/dependence-is-not-advantage/blob/main/examples/minimal.py"
-                >Network-free example</a
-              >
-              <span>Deterministic JSON report using the public API.</span>
-            </li>
-            <li>
-              <a href="dependence-is-not-advantage.pdf">Paper PDF</a>
-              <span
-                >Searchable paper with the formal definitions and empirical
-                study.</span
-              >
-            </li>
-            <li>
-              <a
-                href="https://github.com/Third-Wheel/dependence-is-not-advantage/blob/main/CITATION.cff"
-                >CITATION.cff</a
-              >
-              <span>Software citation metadata for version 0.1.0.</span>
-            </li>
-          </ul>
-        </section>
+      <section class="prose">
+        <h2>A protein-interaction model</h2>
+        <p>
+          DeepGNHV predicts which human and virus proteins interact, reading a graph of each protein's
+          residues built from its predicted structure. Its authors report that AUPRC falls by 16.1 points
+          when the graph is randomized. When we retrain it, the residue-contact graph adds 1.4 points over
+          self-loops on viruses unseen in training, and nothing consistent on viruses it has seen. On those
+          seen viruses, scoring the trained model on a randomized graph without retraining costs 44.3
+          points, against 1.3 when the model is retrained: a different measurement that answers a
+          different question.
+        </p>
 
-        <section class="citation" aria-labelledby="citation-heading">
-          <h2 id="citation-heading">Citation</h2>
-          <p class="citation-text">
-            Duggireddy, Prahas. “Dependence Is Not Advantage: What Randomizing
-            the Graph Does Not Measure.” Preprint, 2026.
-          </p>
-          <p class="citation-note">
-            Copy the entry below or download it as a <code>.bib</code> file.
-          </p>
-          <pre
-            class="bibtex-block"
-          ><code id="bibtex-content">@misc{duggireddy2026dependence,
+        <h2>Which comparison answers your question</h2>
+        <table class="questions">
+          <thead>
+            <tr><th>If you want to know</th><th>compare</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>whether the graph is worth building</td>
+              <td>the model with the graph against the best model without it</td>
+            </tr>
+            <tr>
+              <td>whether this model uses the graph</td>
+              <td>the same model trained with the real graph and with no edges: the <b>gain</b></td>
+            </tr>
+            <tr>
+              <td>whether the wiring matters beyond the degrees</td>
+              <td>the real graph against a degree-preserving randomized graph: the <b>drop</b></td>
+            </tr>
+            <tr>
+              <td>whether a trained model survives errors in its graph</td>
+              <td>the trained model, tested on a perturbed graph without retraining</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The penalty depends on the layer and on how long the model trains. Giving GCN or GAT a separate
+          weight for each node's own features cut the penalty by 17 to 42 points in link prediction on Cora,
+          CiteSeer and PubMed, and training ten times longer cut GCN's penalty on CiteSeer from 45 to 33 points. A drop
+          compared across architectures or training budgets therefore says little about the graph.
+        </p>
+      </section>
+
+      <section class="prose" id="use">
+        <h2>Measure the gain for your model</h2>
+        <p>
+          <code>graph-dependence</code> trains a PyTorch Geometric model on the real graph, on
+          degree-preserving randomized graphs and with no edges, from the same initialization and with the
+          same learning-rate search, and reports the gain, the penalty and the drop with 95% intervals
+          paired by seed.
+        </p>
+        <pre><code>pip install graph-dependence</code></pre>
+        <pre><code>from torch_geometric.datasets import Planetoid
+from torch_geometric.nn import GCN
+
+from graph_dependence import gain_penalty
+
+
+def make_model(in_channels, out_channels):
+    return GCN(in_channels, 64, num_layers=2, out_channels=out_channels, dropout=0.5)
+
+
+data = Planetoid("data", "Cora")[0]
+report = gain_penalty(make_model, data, "node", seeds=5)
+print(report)</code></pre>
+        <pre class="output"><code>node classification, accuracy on a 0-100 scale, 5 seeds
+learning rate chosen for each run on validation from (0.01, 0.001)
+
+                   real graph     no edges   randomized
+score                    79.7         55.0         27.7
+best epoch                 12          319           45
+epochs trained           1012         1319         1045
+
+                                            mean   95% interval
+gain            real - no edges            +24.7   [+22.9, +26.4]
+penalty         no edges - randomized      +27.3   [+24.5, +30.2]
+drop            real - randomized          +52.0   [+48.5, +55.4]
+
+The drop is 65% of the real-graph score. Across seeds the randomized-graph
+scores range from 25.7 to 31.0.
+
+Reading: the gain interval is above zero, so the graph helps this model. Gain is
+47% of the drop and penalty is the rest.</code></pre>
+        <p>
+          If you train the model with your own code, <code>randomize_edges</code> draws the randomized
+          graphs and <code>split_drop</code> turns your scores into the same report. The
+          <a href="https://github.com/Third-Wheel/dependence-is-not-advantage#readme">README</a> covers
+          link prediction, test-time drops and how to read the report.
+        </p>
+
+        <h2>Cite</h2>
+        <pre><code>@misc{duggireddy2026dependence,
+  title  = {Dependence Is Not Advantage: What a Graph-Randomization Drop Measures},
   author = {Duggireddy, Prahas},
-  title = {Dependence Is Not Advantage: What Randomizing the Graph Does Not Measure},
-  year = {2026},
-  note = {Preprint},
-  url = {https://third-wheel.github.io/dependence-is-not-advantage/}
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage}
 }</code></pre>
-          <div class="bibtex-tools">
-            <button class="action-link" id="copy-bibtex" type="button">
-              Copy BibTeX
-            </button>
-            <a
-              class="action-link"
-              href="citation.bib"
-              download="dependence-is-not-advantage.bib"
-              >Download .bib</a
-            >
-          </div>
-          <p class="code-citation">
-            For software reuse, cite the versioned release and report the
-            version used; see the repository’s
-            <a
-              href="https://github.com/Third-Wheel/dependence-is-not-advantage/blob/main/CITATION.cff"
-              >CITATION.cff</a
-            >. For the method or results, cite the
-            <a
-              href="https://www.alphaxiv.org/abs/2608.dependence-is-not-advantage"
-              >associated paper</a
-            >.
-          </p>
-          <p
-            class="visually-hidden"
-            id="copy-status"
-            role="status"
-            aria-live="polite"
-          ></p>
-        </section>
-      </article>
+      </section>
     </main>
 
-    <footer class="site-footer shell">
-      <span><a href="https://thirdwheel.ai/">Third Wheel</a> · 2026</span>
-      <a href="mailto:prahasduggireddy@thirdwheel.ai">Contact</a>
+    <footer>
+      <a href="https://thirdwheel.ai/">Third Wheel</a> · Irvine, USA ·
+      <a href="mailto:prahasduggireddy@thirdwheel.ai">prahasduggireddy@thirdwheel.ai</a>
     </footer>
   </body>
 </html>

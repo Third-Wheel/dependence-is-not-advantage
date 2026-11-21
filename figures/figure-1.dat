@@ -1,0 +1,8 @@
+# CiteSeer link prediction, Hits@20 (%), means of five seeds; gain_low/gain_high bound the 95% interval paired by seed.
+model epochs real none rand drop gain gain_low gain_high
+GCN 400 51.91 55.52 8.75 83 -3.6 -6.1 -1.1
+GCN 4000 50.24 55.87 22.90 54 -5.6 -8.3 -2.9
+GAT 400 51.60 55.91 4.40 91 -4.3 -5.3 -3.3
+GAT 4000 50.33 56.97 12.00 76 -6.6 -10.9 -2.3
+GraphSAGE 400 55.30 56.53 43.47 21 -1.2 -4.8 2.3
+GraphSAGE 4000 55.69 56.70 47.08 15 -1.0 -5.5 3.5
